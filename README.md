@@ -25,6 +25,9 @@
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
+[![API](https://img.shields.io/badge/API-21%2B-green.svg?style=flat)](https://android-arsenal.com/api?level=21)
+![](https://img.shields.io/github/actions/workflow/status/thilinakj/Compose_Pie_Chart_View/build-debug-apk.yml?branch=master)
+![Release](https://img.shields.io/github/release/thilinakj/Compose_Pie_Chart_View.svg?style=flat)
 
 
 <!-- PROJECT LOGO -->
@@ -59,50 +62,183 @@ Simple and Lightweight Pie Chart View library written with Kotlin Compose. Curre
 
 ### Built With
 
-* [![Kotlin][Kotlin]][Next-url]
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+* [![Kotlin][Kotlin-Compose]][https://developer.android.com/jetpack/compose]
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/thilinakj/Compose_Pie_Chart_View.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+1. Add the JitPack repository to your root level `build.gradle` file.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
+   Groovy
+   ```kotlin
+    dependencyResolutionManagement {
+  		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+  		repositories {
+  			mavenCentral()
+  			maven { url 'https://jitpack.io' }
+  		}
+	  }
+   ```
+   KTS
+   ```kotlin
+    dependencyResolutionManagement {
+      repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+      repositories {
+          google()
+          mavenCentral()
+          maven { url = uri("https://jitpack.io") }
+      }
+    }
+      ```
+2. Add the dependency to you app level `build.gradle` file.
+```kotlin
+  dependencies {
+      implementation ("com.github.thilinakj:Compose_Pie_Chart_View:$latest_release")
+  }
+```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+Use guide shows how Pie chart can be used for different scenarios with Jetpack Compose.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+1. Simple Filled Shaped Pie Chart Example
+```kotlin
+@Composable
+fun SimpleFilledChartExample() {
+    val records = listOf(
+        PieChartData.Record(Color1, "A", 10.0),
+        PieChartData.Record(Color2, "B", 20.0),
+        PieChartData.Record(Color3, "C", 40.0),
+    )
+    PieChart(
+        modifier = Modifier
+            .fillMaxWidth(fraction = 0.4f),
+        chartData = PieChartData(
+            records = records,
+            recordValueType = PieChartData.RecordValueType.RawData,
+            chartType = PieChartData.ChartType.PieChartFilled,
+        ),
+    )
+}
+```
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+2. Simple Donut Shaped Pie Chart Example
+```kotlin
+@Composable
+fun SimpleDonutChartExample() {
+    val records = listOf(
+        PieChartData.Record(Color1, "A", 10.0),
+        PieChartData.Record(Color2, "B", 20.0),
+        PieChartData.Record(Color3, "C", 40.0),
+    )
+    PieChart(
+        modifier = Modifier
+            .fillMaxWidth(fraction = 0.4f),
+        chartData = PieChartData(
+            records = records,
+            recordValueType = PieChartData.RecordValueType.RawData,
+            chartType = PieChartData.ChartType.PieChartDonut(strokeWidth = 40.dp),
+        ),
+    )
+} 
+```
+
+3. Input Type Raw Data Chart Example
+```kotlin
+@Composable
+fun InputTypeRawDataChartExample() {
+    val records = mutableListOf(
+        PieChartData.Record(Color5, "A", 10.0),
+        PieChartData.Record(Color2, "B", 20.0),
+        PieChartData.Record(Color3, "C", 40.0),
+        PieChartData.Record(Color4, "D", 80.0),
+        PieChartData.Record(Color1, "E", 160.0),
+    )
+    PieChart(
+        modifier = Modifier
+            .size(150.dp),
+        chartData = PieChartData(
+            records = records,
+            recordValueType = PieChartData.RecordValueType.RawData,
+            chartType = PieChartData.ChartType.PieChartFilled,
+        ),
+    )
+}
+```
+
+4. Input Type Angle Data Chart Example
+```kotlin
+@Composable
+fun InputTypeAngleDataChartExample() {
+    val records = mutableListOf(
+        PieChartData.Record(Color1, "A", 10.0),
+        PieChartData.Record(Color2, "B", 20.0),
+        PieChartData.Record(Color3, "C", 40.0),
+        PieChartData.Record(Color4, "D", 80.0),
+        PieChartData.Record(Color5, "E", 160.0),
+        PieChartData.Record(Color6, "F", 50.0),
+    )
+    PieChart(
+        modifier = Modifier
+            .size(150.dp),
+        chartData = PieChartData(
+            records = records,
+            recordValueType = PieChartData.RecordValueType.Angle,
+            chartType = PieChartData.ChartType.PieChartFilled,
+        ),
+    )
+}
+```
+
+5. Input Type Percentage Data Chart Example
+```kotlin
+@Composable
+fun InputTypePercentageDataChartExample() {
+    val records = mutableListOf(
+        PieChartData.Record(Color1, "A", 10.0),
+        PieChartData.Record(Color2, "B", 20.0),
+        PieChartData.Record(Color3, "C", 40.0),
+        PieChartData.Record(Color4, "D", 5.0),
+        PieChartData.Record(Color5, "E", 15.0),
+        PieChartData.Record(Color6, "F", 10.0),
+    )
+    PieChart(
+        modifier = Modifier
+            .size(150.dp),
+        chartData = PieChartData(
+            records = records,
+            recordValueType = PieChartData.RecordValueType.Percentage,
+            chartType = PieChartData.ChartType.PieChartFilled,
+        ),
+    )
+}
+```
+
+6. Pie Chart With Fixed Size Example
+```kotlin
+        PieChart(
+            modifier = Modifier
+                .size(100.dp),
+            chartData = PieChartData(
+                records = getSampleRecordData(),
+                recordValueType = PieChartData.RecordValueType.RawData,
+                chartType = PieChartData.ChartType.PieChartFilled,
+            ),
+        )
+```
+
+7. Pie Chart With Adaptive Size Example
+```kotlin
+        PieChart(
+            modifier = Modifier
+                .weight(6f),
+            chartData = PieChartData(
+                records = getSampleRecordData(),
+                recordValueType = PieChartData.RecordValueType.RawData,
+                chartType = PieChartData.ChartType.PieChartDonut(30.dp),
+            ),
+        )
+```
 
 
 
