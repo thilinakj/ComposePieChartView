@@ -13,6 +13,10 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+
+        aarMetadata {
+            minCompileSdk = 29
+        }
     }
 
     buildTypes {
@@ -24,6 +28,13 @@ android {
             )
         }
     }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -47,14 +58,14 @@ dependencies {
     implementation("androidx.compose.material3:material3")
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication>("maven") {
-                groupId = "io.github.thilinakj"
-                artifactId = "pie-chart-view"
-                version = "1.0.1"
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "io.github.thilinakj"
+            artifactId = "pie-chart-view"
+            version = "1.0.1"
 
+            afterEvaluate {
                 from(components["release"])
             }
         }
