@@ -62,22 +62,22 @@ Simple and Lightweight Pie Chart View library written with Kotlin Compose. Curre
 
 ### Built With
 
-* [![Kotlin][Kotlin-Compose]][https://developer.android.com/jetpack/compose]
+* [Kotlin-Compose] [https://developer.android.com/jetpack/compose]
 
 ### Installation
 
 1. Add the JitPack repository to your root level `build.gradle` file.
 
    Groovy
-   ```kotlin
-    dependencyResolutionManagement {
-  		repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-  		repositories {
-  			mavenCentral()
-  			maven { url 'https://jitpack.io' }
-  		}
-	  }
-   ```
+```kotlin
+	dependencyResolutionManagement {
+	repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+		repositories {
+			mavenCentral()
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
    KTS
    ```kotlin
     dependencyResolutionManagement {
@@ -89,7 +89,7 @@ Simple and Lightweight Pie Chart View library written with Kotlin Compose. Curre
       }
     }
       ```
-2. Add the dependency to you app level `build.gradle` file.
+2. Add the dependency to you app level `build.gradle` file. ![Release](https://img.shields.io/github/release/thilinakj/Compose_Pie_Chart_View.svg?style=flat)
 ```kotlin
   dependencies {
       implementation ("com.github.thilinakj:Compose_Pie_Chart_View:$latest_release")
@@ -192,9 +192,7 @@ fun InputTypeAngleDataChartExample() {
 
 5. Input Type Percentage Data Chart Example
 ```kotlin
-@Composable
-fun InputTypePercentageDataChartExample() {
-    val records = mutableListOf(
+val records = mutableListOf(
         PieChartData.Record(Color1, "A", 10.0),
         PieChartData.Record(Color2, "B", 20.0),
         PieChartData.Record(Color3, "C", 40.0),
@@ -202,16 +200,15 @@ fun InputTypePercentageDataChartExample() {
         PieChartData.Record(Color5, "E", 15.0),
         PieChartData.Record(Color6, "F", 10.0),
     )
-    PieChart(
-        modifier = Modifier
-            .size(150.dp),
-        chartData = PieChartData(
-            records = records,
-            recordValueType = PieChartData.RecordValueType.Percentage,
-            chartType = PieChartData.ChartType.PieChartFilled,
-        ),
-    )
-}
+PieChart(
+	modifier = Modifier
+	    .size(150.dp),
+	chartData = PieChartData(
+	    records = records,
+	    recordValueType = PieChartData.RecordValueType.Percentage,
+	    chartType = PieChartData.ChartType.PieChartFilled,
+	),
+)
 ```
 
 6. Pie Chart With Fixed Size Example
