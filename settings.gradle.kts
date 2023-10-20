@@ -10,10 +10,11 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url = uri("https://jitpack.io") }
+        // maven { url 'https://jitpack.io' }
     }
 }
 
 rootProject.name = "Pie Chart SDK"
-include(":pieChartView")
 include(":pie-chart-view")
 include(":piechartsample")

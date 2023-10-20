@@ -51,8 +51,9 @@ android {
 
 dependencies {
 
+    // implementation ("com.github.thilinakj:Compose_Pie_Chart_View:Tag")
     implementation(project(mapOf("path" to ":pie-chart-view")))
-    
+
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
     implementation("androidx.activity:activity-compose:1.8.0")
