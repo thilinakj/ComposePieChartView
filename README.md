@@ -70,30 +70,32 @@ Simple and Lightweight Pie Chart View library written with Kotlin Compose. Curre
 
    Groovy
 ```kotlin
-	dependencyResolutionManagement {
+dependencyResolutionManagement {
 	repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-		repositories {
-			mavenCentral()
-			maven { url 'https://jitpack.io' }
-		}
+	repositories {
+		mavenCentral()
+		maven { url 'https://jitpack.io' }
 	}
+}
 ```
    KTS
-   ```kotlin
-    dependencyResolutionManagement {
-      repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-      repositories {
-          google()
-          mavenCentral()
-          maven { url = uri("https://jitpack.io") }
-      }
-    }
-      ```
-2. Add the dependency to you app level `build.gradle` file. ![Release](https://img.shields.io/github/release/thilinakj/Compose_Pie_Chart_View.svg?style=flat)
 ```kotlin
-  dependencies {
-      implementation ("com.github.thilinakj:Compose_Pie_Chart_View:$latest_release")
-  }
+dependencyResolutionManagement {
+	repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+	repositories {
+		google()
+		mavenCentral()
+		maven { url = uri("https://jitpack.io") }
+	}
+}
+```
+2. Add the dependency to you app level `build.gradle` file.
+
+Latest version: ![Release](https://img.shields.io/github/release/thilinakj/Compose_Pie_Chart_View.svg?style=flat)
+```kotlin
+dependencies {
+	implementation ("com.github.thilinakj:Compose_Pie_Chart_View:$latest_release")
+}
 ```
 
 <!-- USAGE EXAMPLES -->
@@ -168,26 +170,23 @@ fun InputTypeRawDataChartExample() {
 
 4. Input Type Angle Data Chart Example
 ```kotlin
-@Composable
-fun InputTypeAngleDataChartExample() {
-    val records = mutableListOf(
-        PieChartData.Record(Color1, "A", 10.0),
-        PieChartData.Record(Color2, "B", 20.0),
-        PieChartData.Record(Color3, "C", 40.0),
-        PieChartData.Record(Color4, "D", 80.0),
-        PieChartData.Record(Color5, "E", 160.0),
-        PieChartData.Record(Color6, "F", 50.0),
-    )
-    PieChart(
-        modifier = Modifier
-            .size(150.dp),
-        chartData = PieChartData(
-            records = records,
-            recordValueType = PieChartData.RecordValueType.Angle,
-            chartType = PieChartData.ChartType.PieChartFilled,
-        ),
-    )
-}
+val records = mutableListOf(
+	PieChartData.Record(Color1, "A", 10.0),
+	PieChartData.Record(Color2, "B", 20.0),
+	PieChartData.Record(Color3, "C", 40.0),
+	PieChartData.Record(Color4, "D", 80.0),
+	PieChartData.Record(Color5, "E", 160.0),
+	PieChartData.Record(Color6, "F", 50.0),
+)
+PieChart(
+	modifier = Modifier
+	    .size(150.dp),
+	chartData = PieChartData(
+	    records = records,
+	    recordValueType = PieChartData.RecordValueType.Angle,
+	    chartType = PieChartData.ChartType.PieChartFilled,
+	),
+)
 ```
 
 5. Input Type Percentage Data Chart Example
@@ -213,28 +212,28 @@ PieChart(
 
 6. Pie Chart With Fixed Size Example
 ```kotlin
-        PieChart(
-            modifier = Modifier
-                .size(100.dp),
-            chartData = PieChartData(
-                records = getSampleRecordData(),
-                recordValueType = PieChartData.RecordValueType.RawData,
-                chartType = PieChartData.ChartType.PieChartFilled,
-            ),
-        )
+PieChart(
+    modifier = Modifier
+	.size(100.dp),
+    chartData = PieChartData(
+	records = getSampleRecordData(),
+	recordValueType = PieChartData.RecordValueType.RawData,
+	chartType = PieChartData.ChartType.PieChartFilled,
+    ),
+)
 ```
 
 7. Pie Chart With Adaptive Size Example
 ```kotlin
-        PieChart(
-            modifier = Modifier
-                .weight(6f),
-            chartData = PieChartData(
-                records = getSampleRecordData(),
-                recordValueType = PieChartData.RecordValueType.RawData,
-                chartType = PieChartData.ChartType.PieChartDonut(30.dp),
-            ),
-        )
+PieChart(
+    modifier = Modifier
+	.weight(6f),
+    chartData = PieChartData(
+	records = getSampleRecordData(),
+	recordValueType = PieChartData.RecordValueType.RawData,
+	chartType = PieChartData.ChartType.PieChartDonut(30.dp),
+    ),
+)
 ```
 
 
@@ -246,8 +245,6 @@ PieChart(
 - [ ] Shadows and elavations
 
 See the [open issues](https://github.com/thilinakj/Compose_Pie_Chart_View/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
@@ -265,17 +262,12 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- CONTACT -->
