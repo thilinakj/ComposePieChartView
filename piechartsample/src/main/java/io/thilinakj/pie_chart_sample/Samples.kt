@@ -127,7 +127,7 @@ fun InputTypeAngleDataChartExample() {
 
 @Composable
 fun InputTypePercentageDataChartExample() {
-    val records = mutableListOf(
+    val records = listOf(
         PieChartData.Record(Color1, "A", 10.0),
         PieChartData.Record(Color2, "B", 20.0),
         PieChartData.Record(Color3, "C", 40.0),
