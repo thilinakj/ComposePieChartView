@@ -1,6 +1,3 @@
-# Compose_Pie_Chart_View
-Simple and Lightweight Pie Chart View library written in Kotlin Compose.
-
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
 <!--
@@ -34,18 +31,18 @@ Simple and Lightweight Pie Chart View library written in Kotlin Compose.
 <br />
 <div align="center">
   <a href="https://github.com/thilinakj/Compose_Pie_Chart_View">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="logo.png" alt="Logo" width="492" height="245">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">Kotlin Compose Pie Chart View</h3>
 
   <p align="center">
-    project_description
+    Simple and Lightweight Pie Chart View library written with Kotlin Compose.
     <br />
     <a href="https://github.com/thilinakj/Compose_Pie_Chart_View"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/thilinakj/Compose_Pie_Chart_View">View Demo</a>
+    <a href="https://youtu.be/EcaCr3ofbvo">View Demo</a>
     ·
     <a href="https://github.com/thilinakj/Compose_Pie_Chart_View/issues">Report Bug</a>
     ·
