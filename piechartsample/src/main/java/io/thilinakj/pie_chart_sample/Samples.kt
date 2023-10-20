@@ -148,7 +148,10 @@ fun InputTypePercentageDataChartExample() {
 
 @Composable
 fun PieChartWithFixedSizeExample() {
-    Row {
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.Center,
+    ) {
         PieChart(
             modifier = Modifier
                 .size(100.dp),
