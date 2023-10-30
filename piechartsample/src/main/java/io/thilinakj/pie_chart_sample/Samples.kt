@@ -60,11 +60,16 @@ fun getSampleScreens(): List<Pair<String, @Composable (() -> Unit)>> = listOf(
 
 @Composable
 fun SimpleFilledChartExample() {
+    val records = listOf(
+        PieChartData.Record(Color1, "A", 10.0),
+        PieChartData.Record(Color2, "B", 20.0),
+        PieChartData.Record(Color3, "C", 40.0),
+    )
     PieChart(
         modifier = Modifier
             .fillMaxWidth(fraction = 0.4f),
         chartData = PieChartData(
-            records = getSampleRecordData(),
+            records = records,
             recordValueType = PieChartData.RecordValueType.RawData,
             chartType = PieChartData.ChartType.PieChartFilled,
         ),
@@ -73,11 +78,18 @@ fun SimpleFilledChartExample() {
 
 @Composable
 fun SimpleDonutChartExample() {
+    val records = listOf(
+        PieChartData.Record(Color1, "A", 10.0),
+        PieChartData.Record(Color2, "B", 20.0),
+        PieChartData.Record(Color3, "C", 40.0),
+        PieChartData.Record(Color4, "D", 80.0),
+        PieChartData.Record(Color5, "E", 160.0),
+    )
     PieChart(
         modifier = Modifier
             .fillMaxWidth(fraction = 0.4f),
         chartData = PieChartData(
-            records = getSampleRecordData(),
+            records = records,
             recordValueType = PieChartData.RecordValueType.RawData,
             chartType = PieChartData.ChartType.PieChartDonut(40.dp),
         ),
