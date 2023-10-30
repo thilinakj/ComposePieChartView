@@ -104,6 +104,9 @@ dependencies {
 Use guide shows how Pie chart can be used for different scenarios with Jetpack Compose.
 
 1. Simple Filled Shaped Pie Chart Example
+
+<img src="media/1.png" alt="Logo" width="360">
+
 ```kotlin
 @Composable
 fun SimpleFilledChartExample() {
@@ -124,7 +127,10 @@ fun SimpleFilledChartExample() {
 }
 ```
 
+
 2. Simple Donut Shaped Pie Chart Example
+<img src="media/2.png" alt="Logo" width="360">
+
 ```kotlin
 @Composable
 fun SimpleDonutChartExample() {
@@ -146,6 +152,8 @@ fun SimpleDonutChartExample() {
 ```
 
 3. Input Type Raw Data Chart Example
+<img src="media/3.png" alt="Logo" width="360">
+
 ```kotlin
 @Composable
 fun InputTypeRawDataChartExample() {
@@ -169,6 +177,8 @@ fun InputTypeRawDataChartExample() {
 ```
 
 4. Input Type Angle Data Chart Example
+<img src="media/5.png" alt="Logo" width="360">
+
 ```kotlin
 val records = mutableListOf(
 	PieChartData.Record(Color1, "A", 10.0),
@@ -190,6 +200,8 @@ PieChart(
 ```
 
 5. Input Type Percentage Data Chart Example
+<img src="media/5.png" alt="Logo" width="360">
+
 ```kotlin
 val records = mutableListOf(
         PieChartData.Record(Color1, "A", 10.0),
@@ -211,29 +223,60 @@ PieChart(
 ```
 
 6. Pie Chart With Fixed Size Example
+<img src="media/6.png" alt="Logo" width="360">
+
 ```kotlin
-PieChart(
-    modifier = Modifier
-	.size(100.dp),
-    chartData = PieChartData(
-	records = getSampleRecordData(),
-	recordValueType = PieChartData.RecordValueType.RawData,
-	chartType = PieChartData.ChartType.PieChartFilled,
-    ),
-)
+Row(
+	modifier = Modifier.fillMaxWidth(),
+	horizontalArrangement = Arrangement.Center,
+) {
+	PieChart(
+	    modifier = Modifier
+		.size(100.dp),
+	    chartData = PieChartData(
+		records = getSampleRecordData(),
+		recordValueType = PieChartData.RecordValueType.RawData,
+		chartType = PieChartData.ChartType.PieChartFilled,
+	    ),
+	)
+	PieChart(
+	    modifier = Modifier
+		.size(100.dp),
+	    chartData = PieChartData(
+		records = getSampleRecordData(),
+		recordValueType = PieChartData.RecordValueType.RawData,
+		chartType = PieChartData.ChartType.PieChartDonut(30.dp),
+	    ),
+	)
+}
 ```
 
 7. Pie Chart With Adaptive Size Example
+<img src="media/7.png" alt="Logo" width="360">
+
 ```kotlin
-PieChart(
-    modifier = Modifier
-	.weight(6f),
-    chartData = PieChartData(
-	records = getSampleRecordData(),
-	recordValueType = PieChartData.RecordValueType.RawData,
-	chartType = PieChartData.ChartType.PieChartDonut(30.dp),
-    ),
-)
+Row(
+	verticalAlignment = Alignment.CenterVertically,
+) {
+	PieChart(
+	    modifier = Modifier
+		.weight(4f),
+	    chartData = PieChartData(
+		records = getSampleRecordData(),
+		recordValueType = PieChartData.RecordValueType.RawData,
+		chartType = PieChartData.ChartType.PieChartFilled,
+	    ),
+	)
+	PieChart(
+	    modifier = Modifier
+		.weight(6f),
+	    chartData = PieChartData(
+		records = getSampleRecordData(),
+		recordValueType = PieChartData.RecordValueType.RawData,
+		chartType = PieChartData.ChartType.PieChartDonut(30.dp),
+	    ),
+	)
+}
 ```
 
 
