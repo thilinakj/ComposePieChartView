@@ -94,7 +94,7 @@ dependencyResolutionManagement {
 Latest version: ![Release](https://img.shields.io/github/release/thilinakj/Compose_Pie_Chart_View.svg?style=flat)
 ```kotlin
 dependencies {
-	implementation ("com.github.thilinakj:Compose_Pie_Chart_View:$latest_release")
+	implementation ("com.github.thilinakj:ComposePieChartView:$latest_release")
 }
 ```
 
